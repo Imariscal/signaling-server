@@ -45,6 +45,12 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
   });
+
+  socket.on('endCall', (data) => {
+    console.log('Llamada terminada:', data.message);
+    socket.broadcast.emit('endCall', { message: 'El usuario terminó la llamada.' });
+  });
+  
 });
 
 const port = process.env.PORT || 3000;
