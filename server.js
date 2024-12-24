@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: 'https://webrtc-app1-kpljg2tge-imariscals-projects.vercel.app', // Dominio del frontend 
+    origin: 'https://webrtc-app1.vercel.app', // Dominio del frontend 
     methods: ['GET', 'POST'],  
     credentials: true, // Permitir envío de cookies y cabeceras de autorización
   },
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: 'https://webrtc-app1-kpljg2tge-imariscals-projects.vercel.app', // Mismo dominio
+  origin: 'https://webrtc-app1.vercel.app', // Mismo dominio
   methods: ['GET', 'POST'],
   credentials: true,
 }));
