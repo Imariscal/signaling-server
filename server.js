@@ -5,6 +5,7 @@ const cors = require('cors'); // Importar el middleware CORS
 
 const app = express();
 const server = http.createServer(app);
+const users = [];
 
 const io = new Server(server, {
   cors: {
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
+//  origin: 'https://localhost:4200', // Dominio del frontend
   origin: 'https://webrtc-app1.vercel.app', // Mismo dominio
   methods: ['GET', 'POST'],
   credentials: true,
