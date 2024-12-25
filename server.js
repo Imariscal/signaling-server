@@ -8,8 +8,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-   // origin: 'https://webrtc-app1.vercel.app', // Dominio del frontend 
-    origin: 'https://localhost:4200', // Dominio del frontend 
+    origin: 'https://webrtc-app1.vercel.app', // Dominio del frontend 
+   // origin: 'https://localhost:4200', // Dominio del frontend 
     methods: ['GET', 'POST'],  
     credentials: true, // Permitir envío de cookies y cabeceras de autorización
   },
