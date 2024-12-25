@@ -10,6 +10,7 @@ const io = new Server(server, {
   cors: {
     origin: 'https://webrtc-app1.vercel.app', // Dominio del frontend 
    // origin: 'https://localhost:4200', // Dominio del frontend 
+    origin: '*', // Allow all origins for WebSocket connections
     methods: ['GET', 'POST'],  
     credentials: true, // Permitir envío de cookies y cabeceras de autorización
   },
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-//  origin: 'https://webrtc-app1.vercel.app', // Mismo dominio
+  origin: 'https://webrtc-app1.vercel.app', // Mismo dominio
   methods: ['GET', 'POST'],
   credentials: true,
 }));
